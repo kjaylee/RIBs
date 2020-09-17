@@ -24,6 +24,7 @@
 		418C175D1F97F1A1003C03F7 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C17561F97DB2E003C03F7 /* Dependency.swift */; };
 		8B9882EC1F86E1CF00ABE009 /* RIBs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9882E21F86E1CF00ABE009 /* RIBs.framework */; };
 		8B9882F31F86E1CF00ABE009 /* RIBs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9882E51F86E1CF00ABE009 /* RIBs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E915F0E25133FCC007073B2 /* CompositeCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E915F0D25133FCC007073B2 /* CompositeCancellable.swift */; };
 		AF90B40A1FBA14DB00920384 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90B4091FBA14DB00920384 /* RouterTests.swift */; };
 		AF90B40C1FBA157700920384 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90B40B1FBA157700920384 /* Mocks.swift */; };
 		AF90B4111FBA185E00920384 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90B4101FBA185E00920384 /* ComponentTests.swift */; };
@@ -66,6 +67,7 @@
 		8B9882E61F86E1CF00ABE009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B9882EB1F86E1CF00ABE009 /* RIBsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RIBsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9882F21F86E1CF00ABE009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E915F0D25133FCC007073B2 /* CompositeCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeCancellable.swift; sourceTree = "<group>"; };
 		AF82F6731FC81B5F006DF7BC /* Foundation+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		AF90B4091FBA14DB00920384 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		AF90B40B1FBA157700920384 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				413177291F8EEFF0005F08F0 /* Builder.swift */,
 				413177221F8EEFEF005F08F0 /* Interactor.swift */,
+				9E915F0D25133FCC007073B2 /* CompositeCancellable.swift */,
 				413177261F8EEFEF005F08F0 /* LaunchRouter.swift */,
 				413177231F8EEFEF005F08F0 /* PresentableInteractor.swift */,
 				413177251F8EEFEF005F08F0 /* Presenter.swift */,
@@ -396,6 +399,7 @@
 				4131772C1F8EF5FF005F08F0 /* Builder.swift in Sources */,
 				413177331F8EF5FF005F08F0 /* ViewControllable.swift in Sources */,
 				413177311F8EF5FF005F08F0 /* Router.swift in Sources */,
+				9E915F0E25133FCC007073B2 /* CompositeCancellable.swift in Sources */,
 				413177301F8EF5FF005F08F0 /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -533,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -560,11 +564,12 @@
 				);
 				INFOPLIST_FILE = RIBs/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uber.RIBs;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,11 +592,12 @@
 				);
 				INFOPLIST_FILE = RIBs/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uber.RIBs;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
